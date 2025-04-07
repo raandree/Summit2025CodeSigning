@@ -1,7 +1,7 @@
 Install-Module -Name Az.KeyVault, Az.Resources -Force
 
 $tenantId = 'a1627b4f-281e-4f8b-bf13-bddc0eb6857e'
-Connect-AzAccount -TenantId $tenantId
+Connect-AzAccount -TenantId $tenantId -AuthScope MicrosoftGraphEndpointResourceId
 
 $subscriptionId = (Get-AzContext).Subscription.Id
 $keyVaultName = 'Summit2025Demo'
@@ -37,5 +37,6 @@ New-AzRoleAssignment -ObjectId f4afdf8c-6701-46fe-993b-5dd76192a292 -RoleDefinit
 $certificatePassword = ConvertTo-SecureString -String Password1 -AsPlainText -Force
 $certificatePath = '.\Assets\SignTest.pfx'
 
+Connect-AzAccount -TenantId $tenantId -AuthScope KeyVault
 # Import the certificate into the Key Vault
 Import-AzKeyVaultCertificate -VaultName $keyVaultName -Name Summit2025Demo -FilePath $certificatePath -Password $certificatePassword
