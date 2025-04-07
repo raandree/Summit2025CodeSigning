@@ -84,3 +84,7 @@ The combination of both repositories provides a complete end-to-end solution for
 ## Conference Session Information
 
 This repository serves as a demonstration for the "Secure Code Signing for PowerShell: From Local to Enterprise Solutions" session at the PowerShell Summit 2025. The session covers best practices and practical implementations of code signing techniques for PowerShell scripts and modules.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
